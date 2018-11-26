@@ -83,8 +83,8 @@ void loop(){
         u8x8.setCursor(8, 15); u8x8.print(mcparray);
     }
     if (!digitalRead(ACC) && trip1 > trip1_old) {                   // Write EEPROM if not ACC present
-        //EEPROM_ulong_write(0, trip1);
-        //EEPROM_ulong_write(1, trip2);
+        //EEPROM_ulong_write(0, trip1);                             // Just uncomment this
+        //EEPROM_ulong_write(1, trip2);                             // 
         delay(2000);
     }
 }
