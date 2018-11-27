@@ -57,8 +57,8 @@ void loop(){
         else { dallastemp = (ds_tm/10/100) % 10; dallastemp += (ds_tm/10/10) % 10; dallastemp += (ds_tm/10) % 10; }
         mcparray = "";
         for (pin = 0; pin  < 16; pin ++) { mcparray += ","; mcparray += mcp.digitalRead(pin); }
-        Serial.print(speedometer + "," + tahometer + "," + voltage + "," + fuel + "," + temperature + "," + dallastemp + mcparray + "," + trip1 + "," + trip2 +":\n");
-        // Example output string: 000,0000,1023,1008,1008,022,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,171,54:
+        Serial.print(speedometer + "," + tahometer + "," + voltage + "," + fuel + "," + temperature + "," + dallastemp + mcparray + "," + trip1 + "," + trip2 +"\n");
+        // Example output string: 000,0000,1023,1008,1008,022,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,171,54
         Serial.flush();
         if(tz != 0){tz--;}else{th = 0;}; 
         if(sz != 0){sz--;}else{sp = 0;};
