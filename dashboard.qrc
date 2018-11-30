@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/TachometerStyle.qml</file>
+        <file>qml/TurnIndicator.qml</file>
+        <file>qml/ValueSource.qml</file>
+        <file>fonts/europedemi.ttf</file>
+        <file>qml/SpeedometerStyle.qml</file>
+        <file>qml/FuelGaugeStyle.qml</file>
+        <file>images/half-bg.png</file>
+        <file>qml/TempGaugeStyle.qml</file>
+        <file>variables.js</file>
+        <file>sounds/warning.wav</file>
+        <file>sounds/purr.wav</file>
+        <file>qml/Indicators.qml</file>
+        <file>qml/Warnings.qml</file>
+        <file>sounds/turn-off.wav</file>
+        <file>sounds/turn-on.wav</file>
+        <file>fonts/europe-ex.ttf</file>
+        <file>qml/SequentialDemo.qml</file>
+        <file>qml/BlackheartMain.qml</file>
+        <file>qml/DashboardGaugeStyle.qml</file>
+        <file>images/batt.png</file>
+        <file>images/corners.png</file>
+        <file>images/fogs.png</file>
+        <file>images/fuel.png</file>
+        <file>images/hibeam.png</file>
+        <file>images/lobeam.png</file>
+        <file>images/oil.png</file>
+        <file>images/tailfogs.png</file>
+    </qresource>
+</RCC>
