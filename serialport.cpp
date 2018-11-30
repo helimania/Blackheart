@@ -28,7 +28,6 @@ void SerialPort::onReadData()
 {
     while (arduino->canReadLine()) {
         QByteArray data = arduino->readLine();
-//        qDebug()<<QString(data).trimmed();
         QString value = QString(data).trimmed();
         set_serial_data(value);
     }
@@ -39,12 +38,7 @@ void SerialPort::openDefault()
 {
     arduino->setPortName("/dev/ttyAMA0");
     arduino->setBaudRate(QSerialPort::Baud115200);
-//    arduino->setDataBits(QSerialPort::Data8);
-//    arduino->setParity(QSerialPort::NoParity);
-//    arduino->setStopBits(QSerialPort::OneStop);
-//    arduino->setFlowControl(QSerialPort::NoFlowControl);
-
-    if (arduino->open(QSerialPort::ReadOnly))  // ReadWrite
+    if (arduino->open(QSerialPort::ReadOnly))
         qDebug()<<"Connected to:"<< arduino->portName();
     else
         qCritical()<<"Serial Port error: " << arduino->errorString();
