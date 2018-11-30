@@ -8,3 +8,4 @@ Requires:
 - QT 5.11.1
 - А little time and patience
 
+At this time, some files not added.
