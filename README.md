@@ -88,6 +88,11 @@ Edit wpa_supplicant.conf to set up ssid and psk for you WiFi access point.
 # Example for make and run application
 
 ```ruby
+
+cd ~
+git clone https://github.com/helimania/Blackheart.git
+cd Blackheart
+
 ~/raspi/qt5/bin/qmake
 make
 scp Blackheart root@192.168.1.116:/root
