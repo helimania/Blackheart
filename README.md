@@ -54,7 +54,7 @@ mkdir ~/raspi
 
 cd ~/raspi
 
-git clone https_://github.com/raspberrypi/tools
+git clone https://github.com/raspberrypi/tools
 
 ssh-keygen -t rsa -C pi@raspberrypi.local -N "" -f ~/.ssh/id_rsa
 
@@ -93,3 +93,14 @@ Download Buildroot https://buildroot.org/download.html and make raspberry immage
 I personally flashing image on my Mac OS with Etcher. You may download it here https://www.balena.io/etcher/ or flash image from console.
 
 Edit wpa_supplicant.conf to set up ssid and psk for you WiFi access point.
+
+# Example for make and run application
+
+~/rpi/qt5/bin/qmake
+
+make
+
+scp Blackheart root@192.168.1.116:/root
+
+ssh -t root@192.168.1.116 "./Blackheart"
+
