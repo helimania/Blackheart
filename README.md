@@ -3,8 +3,6 @@ Digital instrument cluster
 
 ![preview 1](https://github.com/helimania/Blackheart/blob/master/preview1.jpg)
 
-![preview 2](https://github.com/helimania/Blackheart/blob/master/preview2.jpg)
-
 Requires:
 - Raspberry PI Zero
 - Atmega328P with Arduino bootloader
@@ -97,3 +95,6 @@ ssh -t root@192.168.1.116 "./Blackheart"
 ```
 
 After reboot, application runs automaticaly.
+
+![preview 2](https://github.com/helimania/Blackheart/blob/master/preview2.jpg)
+
