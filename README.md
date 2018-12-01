@@ -14,3 +14,12 @@ Requires:
 - QT 5.11.1
 - А little time and patience
 
+# Prepare Raspberry Pi Zero
+
+Download Buildroot https://buildroot.org/download.html and make raspberry immage using included config and overlays.
+
+I personally flashing image on my Mac OS with Etcher. You may download it here https://www.balena.io/etcher/ or flash image from console.
+
+Edit wpa_supplicant.conf to set up ssid and psk for you WiFi access point.
+
+# Prepare QT 5.11.1
