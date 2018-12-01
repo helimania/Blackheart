@@ -85,10 +85,24 @@ I personally flashing image on my Mac OS with Etcher. You may download it here h
 
 Edit wpa_supplicant.conf to set up ssid and psk for you WiFi access point.
 
-# Example for make and run application
+After raspberry boot, enter two console commands:
 
 ```ruby
+mount -o remount, rw /
+ln -s /usr/lib/libGLESv2.so /usr/lib/libGLESv2.so.2
+```
 
+# Example for make and run application
+
+[RPI]
+
+```ruby
+mount -o remount, rw /
+```
+
+[HOST]
+
+```ruby
 cd ~
 git clone https://github.com/helimania/Blackheart.git
 cd Blackheart
