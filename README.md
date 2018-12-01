@@ -1,7 +1,9 @@
 # Blackheart
 Digital instrument cluster
 
-![preview](https://github.com/helimania/Blackheart/blob/master/preview.jpg)
+![preview 1](https://github.com/helimania/Blackheart/blob/master/preview1.jpg)
+
+![preview 2](https://github.com/helimania/Blackheart/blob/master/preview2.jpg)
 
 Requires:
 - Raspberry PI Zero
