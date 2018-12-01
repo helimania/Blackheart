@@ -21,6 +21,7 @@ Get raspbian images from here https://www.raspberrypi.org/downloads/raspbian/ an
 [RPI]
 
 sudo raspi-config (enable SSH, disable X windows, setup network)
+
 sudo passwd root (setup root password)
 sudo rpi-update
 sudo reboot
