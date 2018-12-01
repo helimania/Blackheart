@@ -23,19 +23,27 @@ Get raspbian images from here https://www.raspberrypi.org/downloads/raspbian/ an
 sudo raspi-config (enable SSH, disable X windows, setup network)
 
 sudo passwd root (setup root password)
+
 sudo rpi-update
+
 sudo reboot
 
 sudo nano /etc/apt/sources.list (uncomment deb-src)
+
 sudo apt-get update
+
 sudo apt-get upgrade
+
 sudo reboot
 
 sudo apt-get build-dep qt4-x11
+
 sudo apt-get build-dep libqt5gui5
+
 sudo apt-get install libudev-dev libinput-dev libts-dev libxcb-xinerama0-dev libxcb-xinerama0
 
 sudo mkdir /usr/local/qt5pi
+
 sudo chmod -R 777 /usr/local/qt5pi
 
 [HOST]
