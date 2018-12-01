@@ -202,7 +202,7 @@ Window {
             anchors.bottomMargin: 10
             anchors.left: parent.left
             anchors.leftMargin: 10
-            value: valueSource.rpm/100
+            value: valueSource.rpm/1000
             maximumValue: 8
             style: TachometerStyle {}
             Behavior on value {
