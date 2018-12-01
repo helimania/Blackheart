@@ -22,6 +22,8 @@ Arduino and Raspberry connected with only one wire TX (arduino) -> RX (raspberry
 
 For raspberry external PWM sound used scheme from here https://www.tinkernut.com/2017/04/adding-audio-output-raspberry-pi-zero-tinkernut-workbench/#lightbox[10497]/2/
 
+Arduino sketch included.
+
 # Prepare QT 5.11
 
 Get raspbian images from here https://www.raspberrypi.org/downloads/raspbian/ and follow an official installation guide to boot it up.
