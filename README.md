@@ -14,9 +14,12 @@ Requires:
 - QT 5.11.1
 - А little time and patience
 
-# Shematic
+# Schematic
 
 However, I did not redraw the scheme for this project, but I hope you will understand how it should look.
+
+![schematic](https://github.com/helimania/Blackheart/blob/master/ProMini-v2-OLED-Pi/ProMini-v1-schematic.jpg)
+
 Arduino and Raspberry connected with only one wire TX (arduino) -> RX (raspberry) and scheme taken from here https://elinux.org/RPi_GPIO_Interface_Circuits
 
 # Prepare QT 5.11.1
