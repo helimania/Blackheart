@@ -20,6 +20,8 @@ However, I did not redraw the scheme for this project, but I hope you will under
 
 Arduino and Raspberry connected with only one wire TX (arduino) -> RX (raspberry) and scheme taken from here https://elinux.org/RPi_GPIO_Interface_Circuits
 
+For raspberry external PWM sound used scheme from here https://www.tinkernut.com/2017/04/adding-audio-output-raspberry-pi-zero-tinkernut-workbench/#lightbox[10497]/2/
+
 # Prepare QT 5.11
 
 Get raspbian images from here https://www.raspberrypi.org/downloads/raspbian/ and follow an official installation guide to boot it up.
