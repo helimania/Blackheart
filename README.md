@@ -1,6 +1,8 @@
 # Blackheart
 Digital instrument cluster
 
+![preview](https://github.com/helimania/Blackheart/blob/master/preview.jpg)
+
 Requires:
 - Raspberry PI Zero
 - Atmega328P with Arduino bootloader
