@@ -51,29 +51,39 @@ sudo chmod -R 777 /usr/local/qt5pi
 sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6
 
 mkdir ~/raspi
+
 cd ~/raspi
 
 git clone https_://github.com/raspberrypi/tools
 
 ssh-keygen -t rsa -C pi@raspberrypi.local -N "" -f ~/.ssh/id_rsa
+
 cat ~/.ssh/id_rsa.pub | ssh -o StrictHostKeyChecking=no pi@raspberrypi.local "mkdir -p .ssh && chmod 700 .ssh && cat >> .ssh/authorized_keys"
 
 mkdir sysroot sysroot/usr sysroot/opt
+
 rsync -avz pi@raspberrypi.local:/lib sysroot
+
 rsync -avz pi@raspberrypi.local:/usr/include sysroot/usr
+
 rsync -avz pi@raspberrypi.local:/usr/lib sysroot/usr
+
 rsync -avz pi@raspberrypi.local:/opt/vc sysroot/opt
 
 wget https_://raw.githubusercontent.com/riscv/riscv-poky/priv-1.10/scripts/sysroot-relativelinks.py
+
 chmod +x sysroot-relativelinks.py
+
 ./sysroot-relativelinks.py sysroot
 
 git clone git://code.qt.io/qt/qtbase.git -b 5.11
+
 cd qtbase
 
 ./configure -no-gbm -no-glib -no-gstreamer -qt-xcb -no-pch -no-zlib -no-use-gold-linker -release -opengl es2 -device linux-rasp-pi-g++ -device-option CROSS_COMPILE=~/raspi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf- -sysroot ~/raspi/sysroot -opensource -confirm-license -make libs -prefix /usr/local/qt5pi -extprefix ~/raspi/qt5pi -hostprefix ~/raspi/qt5 -v
 
 make -j4
+
 make install
 
 # Prepare Raspberry Pi Zero
