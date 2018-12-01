@@ -20,7 +20,7 @@ However, I did not redraw the scheme for this project, but I hope you will under
 
 Arduino and Raspberry connected with only one wire TX (arduino) -> RX (raspberry) and scheme taken from here https://elinux.org/RPi_GPIO_Interface_Circuits
 
-# Prepare QT 5.11.1
+# Prepare QT 5.11
 
 Get raspbian images from here https://www.raspberrypi.org/downloads/raspbian/ and follow an official installation guide to boot it up.
 
