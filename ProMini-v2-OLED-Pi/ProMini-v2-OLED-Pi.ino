@@ -3,9 +3,13 @@
 #include "Adafruit_MCP23017.h"
 #include <Wire.h>
 #include <OneWire.h>
-/*************************************************************************************
-**  Definition section
-*************************************************************************************/
+
+/******************************
+ * 
+ *  Definition section
+ *  
+ ******************************/
+ 
 const int tm_lo_val = 85, tm_hi_val = 40;                                           // Temperature sensor value
 const float tm_lo_tmp = 54.0, tm_hi_tmp = 88.2;                                     // Real sensor temperature
 
@@ -25,11 +29,15 @@ volatile unsigned int sp = 0, th = 0, vo = 0, fu = 0, tm = 0, oi= 0, ds_tm = 0;
 unsigned long trip1, trip1_old, trip2;
 int pin = 0;
 String  mcparray;
-char * txtOLED[16] ={ "Blackheart Board", "", "Speed :", "  RPM :", "", "Volts :", "  Oil :", " Fuel :", "TempA :", "TempB :", "", "TripA :",  "TripB :", "", "PortA :", "PortB :" };
+char * txtOLED[16] = { "Blackheart Board", "", "Speed :", "  RPM :", "", "Volts :", "  Oil :", " Fuel :", "TempA :", "TempB :", "", "TripA :",  "TripB :", "", "PortA :", "PortB :" };
 OneWire ds(DALLAS);                                                                 // Temperature sensor DS18B20 port
-/*************************************************************************************
-**  Setup section
-*************************************************************************************/
+
+/******************************
+ * 
+ *  Setup section
+ *  
+ ******************************/
+ 
 void setup(){
     Serial.begin(115200);
     attachInterrupt(0, spd, FALLING);                                               // Speedometer falling interrupt INT0
@@ -52,9 +60,13 @@ void setup(){
     for (int idx = 0; idx < oi_num; idx++) oi_buf[idx] = 0;                         // Buffer reset for fuel 
     for (int idx = 0; idx < oi_num; idx++) oi_buf[idx] = 0;                         // Buffer reset for temperature
 }
-/*************************************************************************************
-**  Main loop section
-*************************************************************************************/
+
+/******************************
+ * 
+ *  Main loop section
+ *
+ ******************************/
+ 
 void loop(){
     DallasRd();
     if(((millis() - millis_t) >= 20) && digitalRead(ACC)){                          // Serial refresh interval in milliseconds if ACC present
@@ -139,9 +151,13 @@ void loop(){
         //delay(2000);
     }
 }
-/*************************************************************************************
-**  Functions section
-*************************************************************************************/
+
+/******************************
+ * 
+ *  Functions section  
+ *  
+ ******************************/
+ 
 void spd() {                                                                        // Speedometer interupt
     if (!st) { micros_sp = micros(); }
     else { sp = 3600000 / 4 / (micros() - micros_sp); }                             // Sensor pulses per rotation
@@ -188,3 +204,4 @@ String az(const int& src) {                                                     
     result += (src)       % 10;
     return result;
 }
+
