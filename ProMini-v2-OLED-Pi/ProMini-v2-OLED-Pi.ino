@@ -52,8 +52,8 @@ void setup(){
     initOLED();
 
     for (int idx = 0; idx < oi_num; idx++) oi_buf[idx] = 0;                         // Buffer reset for oil 
-    for (int idx = 0; idx < oi_num; idx++) oi_buf[idx] = 0;                         // Buffer reset for fuel 
-    for (int idx = 0; idx < oi_num; idx++) oi_buf[idx] = 0;                         // Buffer reset for temperature
+    for (int idx = 0; idx < fu_num; idx++) fu_buf[idx] = 0;                         // Buffer reset for fuel 
+    for (int idx = 0; idx < tm_num; idx++) tm_buf[idx] = 0;                         // Buffer reset for temperature
 }
 
 /******************************
