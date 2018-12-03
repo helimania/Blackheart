@@ -123,7 +123,7 @@ After reboot, application runs automaticaly.
 
 # CAN bus interface
 
-Theoretically can be used CAN bus. For this you need TJA1050 chip.
+Theoretically can be used CAN bus. For this you need only TJA1050 chip.
 
 ![TJA1050](https://github.com/helimania/Blackheart/blob/master/ProMini-v2-OLED-Pi/TJA1050.jpg)
 
