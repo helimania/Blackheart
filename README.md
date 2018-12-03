@@ -121,3 +121,14 @@ After reboot, application runs automaticaly.
 
 ![preview 2](https://github.com/helimania/Blackheart/blob/master/preview2.jpg)
 
+# CAN bus interface
+
+Theoretically can be used CAN bus. For this you need TJA1050 chip.
+
+![TJA1050](https://github.com/helimania/Blackheart/blob/master/ProMini-v2-OLED-Pi/TJA1050.jpg)
+
+But since the serial interface is used to transfer data to raspberry, you can use i2c or SPI interface to connect to arduino. Or separate RX TX lines, for transfer data to raspberr an receive data from CAN bus. Fantasy has not been canceled...
+
+For example, CAN bus with SPI interface.
+
+![MCP2515](https://github.com/helimania/Blackheart/blob/master/ProMini-v2-OLED-Pi/MCP2515-CAN-Bus-Interface.jpg)
