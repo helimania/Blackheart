@@ -174,4 +174,4 @@ void loop() {
 }
 ```
 
-Described in more details here https://www.14core.com/wiring-the-mcp2515-controller-area-network-can-bus-diagnostics/
+More details here https://www.14core.com/wiring-the-mcp2515-controller-area-network-can-bus-diagnostics/
