@@ -1,6 +1,7 @@
 #include <EEPROM.h>
 #include <U8x8lib.h>
 #include "Adafruit_MCP23017.h"
+#include "MultiMap.h"
 #include <Wire.h>
 #include <OneWire.h>
 
@@ -15,19 +16,18 @@ Adafruit_MCP23017 mcp;                                                          
 
 byte ACC = 4, VOLT = 14, FUEL = 15, TEMP = 16, OIL = 17,  DALLAS = 8;               // Pin assignment
 
-const int tm_lo_val = 85, tm_hi_val = 40;                                           // Temperature sensor value
-const float tm_lo_tmp = 54.0, tm_hi_tmp = 88.2;                                     // Real sensor temperature
+int tmI[] = {  0, 10, 20, 30,40,50,60,70,80,90,100,140,200,288,354};                // Temperature sensor value
+int tmO[] = {130,120,110,100,90,80,70,65,62,60, 55, 39, 30, 13,  0};                // Temperature real value
 
-const int oi_num = 50, fu_num = 50, tm_num = 50;                                    // Average constants:
+const int oi_num = 10, fu_num = 50, tm_num = 50;                                    // Average constants:
 int oi_buf[oi_num], oi_idx = 0;
 int fu_buf[fu_num], fu_idx = 0;
-int tm_buf[tm_num], tm_idx = 0;
-long oi_tot = 0, fu_tot = 0, tm_tot = 0;
+int tm_buf[tm_num], tm_idx = 0, tm = 0;
+long oi_tot = 0, fu_tot = 0, tm_tot = 0, fu = 0, oi= 0;
 volatile unsigned long   micros_sp = 0, micros_th = 0, millis_ds = 0, millis_t  = 0, millis_d  = 0, millis_fu  = 0, millis_vo  = 0, millis_tm  = 0, millis_oi  = 0; // Timers
 volatile boolean st = false, tt = false;                                            // Triggers 
 volatile byte sz = 0, tz = 0;                                                       // Reset counters
 volatile unsigned int sp = 0, th = 0, vo = 0, ds_tm = 0;
-long fu = 0, oi= 0, tm = 0;
 unsigned long trip1, trip1_old, trip2;
 int pin = 0;
 String  mcparray;
@@ -92,29 +92,27 @@ void loop(){
             tm_tot += tm_buf[tm_idx];
             tm_idx++; if (tm_idx >= tm_num) tm_idx = 0; 
             tm = tm_tot / tm_num;        
-            tm = tm_hi_tmp + (tm_lo_tmp - tm_hi_tmp) / (tm_lo_val - tm_hi_val) * (tm - tm_hi_val);
-            tm = constrain(tm, 0, 120);
+            tm = constrain(multiMap(tm, tmI, tmO, 15), 0, 120);            
         }
 
-        if ((millis() - millis_oi)  >= 1000) {                                      // Oil pressure refresh interval in milliseconds
+        if ((millis() - millis_oi)  >= 10) {                                      // Oil pressure refresh interval in milliseconds
             millis_oi = millis();
             //oi = map(analogRead(OIL), 0, 730, 100, 0);
             oi = analogRead(OIL);
             oi_tot -= oi_buf[oi_idx];                                               // Average oil buffer
-            oi_buf[oi_idx] = oi; 
+            oi_buf[oi_idx] = oi;
             oi_tot += oi_buf[oi_idx];
-            oi_idx++; if (oi_idx >= oi_num) oi_idx = 0; 
-            oi = oi_tot / oi_num;        
+            oi_idx++; if (oi_idx >= oi_num) oi_idx = 0;
+            oi = oi_tot / oi_num;
+            oi = map(constrain(oi, 0, 200), 0, 200, 1000, 0);
 
         }
 
         mcparray = "";
         for (pin = 0; pin  < 16; pin ++) { mcparray += ","; mcparray += mcp.digitalRead(pin); }
         
-        Serial.print(az(sp, 3) + "," + az(th, 4) + "," + az(vo, 4) + "," + az(fu, 3) + "," + az(tm, 3) + "," + az(ds_tm, 3) + "," + az(oi, 4) + mcparray + "," + trip1 + "," + trip2 +"\n");
-        
-        // Example output string: 000,0000,1023,022,018,016,1001,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,171,54
-        
+        Serial.print(az(sp, 3) + "," + az(th, 4) + "," + az(vo, 4) + "," + az(fu, 3) + "," + tm + "," + az(ds_tm, 3) + "," + az(oi, 4) + mcparray + "," + trip1 + "," + trip2 +"\n");
+                
         Serial.flush();
         if(tz != 0){tz--;}else{th = 0;}; 
         if(sz != 0){sz--;}else{sp = 0;};
@@ -208,13 +206,12 @@ void drawOLED() {                                                               
     u8x8.setCursor(8, 15); u8x8.print(mcparray);
 }
 
-
 String az(const int& src, int num) {                                                // Adding zeroes
     String result = "";
-    if (num > 3) result += (src/1000)  % 10; 
-    if (num > 2) result += (src/100)   % 10; 
-    if (num > 1) result += (src/10)    % 10; 
-    if (num > 0) result += (src)       % 10;
+    if (num >  3) result += (src/1000)  % 10; 
+    if (num >  2) result += (src/100)   % 10; 
+    if (num >  1) result += (src/10)    % 10; 
+    if (num >  0) result += (src)       % 10;
     if (num == 0) result += src;
     return result;
 }
