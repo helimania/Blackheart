@@ -16,8 +16,8 @@ Adafruit_MCP23017 mcp;                                                          
 
 byte ACC = 4, VOLT = 14, FUEL = 15, TEMP = 16, OIL = 17,  DALLAS = 8;               // Pin assignment
 
-int tmI[] = {  0, 10, 20, 30,40,50,60,70,80,90,100,140,200,288,354};                // Temperature sensor value
-int tmO[] = {130,120,110,100,90,80,70,65,62,60, 55, 39, 30, 13,  0};                // Temperature real value
+int tmI[] = {  0, 10, 20, 30,40,50,60,70,80,90,100,140,200,288,354};                // Temperature sensor values
+int tmO[] = {130,120,110,100,90,80,70,65,62,60, 55, 39, 30, 13,  0};                // Temperature real values
 
 const int oi_num = 10, fu_num = 50, tm_num = 50;                                    // Average constants:
 int oi_buf[oi_num], oi_idx = 0;
