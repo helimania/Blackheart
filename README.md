@@ -1,6 +1,8 @@
 # Blackheart (PRIVATE)
 Digital instrument cluster
 
+For commercial offers write to my email helimania@me.com
+
 [![Boot](https://github.com/helimania/Blackheart/blob/master/youBoot.jpg)](https://www.youtube.com/watch?v=Y-z6Gsg9BnU)
 
 ![preview 1](https://github.com/helimania/Blackheart/blob/master/preview1.jpg)
