@@ -1,7 +1,7 @@
 # Blackheart (PRIVATE)
 Digital instrument cluster
 
-For commercial offers write to my email helimania@me.com
+With commercial offers, email me helimania@me.com or contact me on Drive2 https://www.drive2.ru/users/helimania/
 
 [![Boot](https://github.com/helimania/Blackheart/blob/master/youBoot.jpg)](https://www.youtube.com/watch?v=Y-z6Gsg9BnU)
 
