@@ -14,7 +14,7 @@ fi
 
 DIR="/usr/local/qt5pi/"
 
-echo "This will install QT5Bottle to /opt/qt5pi..."
+echo "This will install QT5Bottle to $DIR..."
 read -r -p "Are you sure? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
 then
