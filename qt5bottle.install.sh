@@ -42,7 +42,7 @@ then
 	sudo ldconfig
 	printf "\033[0;36m\nInstalling all dependencies for libqt5gui5...\033[0m\n\n"
 	sudo apt-get build-dep libqt5gui5 -y
-	printf "\n\033[1;36mAll done!!\033[0m\n\n"
+	printf "\n\033[1;36mAll done!\033[0m\n\n"
 
 else
 	printf "\n\033[1;31mCanceled!\033[0m\n\n"
