@@ -40,7 +40,7 @@ then
 	echo /usr/local/qt5pi/lib | sudo tee /etc/ld.so.conf.d/qt5pi.conf
 	cd /usr/local/qt5pi/lib
 	sudo ldconfig
-	printf "\033[0;36m\nInstall all dependencies for libqt5gui5...\033[0m\n\n"
+	printf "\033[0;36m\nInstalling all dependencies for libqt5gui5...\033[0m\n\n"
 	sudo apt-get build-dep libqt5gui5 -y
 	printf "\n\033[1;36mAll done!!\033[0m\n\n"
 
